@@ -1,0 +1,32 @@
+.button{
+    width:100%;
+    margin-top:1rem;
+    padding:1rem;
+
+    border:none;
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:var(--success);
+    color:white;
+
+    font-weight:700;
+
+    transition:.25s;
+}
+
+.button:hover:not(:disabled){
+    background:color-mix(in srgb, var(--success) 82%, #000);
+}
+
+.button:disabled{
+    cursor:not-allowed;
+    opacity:.65;
+}
+
+.completed{
+    background:transparent !important;
+    border:1px solid var(--success);
+    color:var(--success);
+}

@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+    min-height: 100vh;
+}
+
+body {
+    background: var(--background);
+    color: var(--title);
+    font-family: Inter, Manrope, "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-synthesis: none;
+    letter-spacing: -0.01em;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+h1,
+h2,
+h3,
+strong {
+    letter-spacing: -0.035em;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    transition-duration: 0.2s;
+}
+
+::selection {
+    background: color-mix(in srgb, var(--primary) 32%, transparent);
+    color: var(--title);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

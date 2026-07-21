@@ -1,0 +1,32 @@
+.page { width: 100%; max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.75rem; }
+.header { padding: 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 18px; }
+.heading > span { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.heading h1 { margin: 0.35rem 0 0; color: var(--title); font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; }
+.heading p { margin: 0.6rem 0 0; color: var(--text); }
+.controls { display: flex; align-items: center; gap: 0.7rem; }
+.controls strong { min-width: 150px; color: var(--title); text-align: center; text-transform: capitalize; }
+.controls button { min-height: 40px; padding: 0.6rem 0.8rem; background: var(--surface); color: var(--title); border: 1px solid var(--border); border-radius: 9px; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+.controls button:hover { background: var(--surface-2); border-color: var(--primary); }
+.calendar { padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; }
+.weekDays, .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.75rem; }
+.weekDays { margin-bottom: 0.75rem; }
+.weekDays span { color: var(--text); font-size: 0.82rem; text-align: center; font-weight: 700; }
+.day { min-height: 82px; padding: 0.8rem; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; background: var(--surface); color: var(--title); border: 1px solid var(--border); border-radius: 12px; font: inherit; cursor: pointer; transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease; }
+.day:hover:not(:disabled) { border-color: var(--primary); transform: translateY(-2px); }
+.day:disabled { opacity: 0; cursor: default; }
+.day > span { font-weight: 700; }
+.day small { width: 24px; height: 24px; display: grid; place-items: center; background: var(--success); color: #fff; border-radius: 50%; font-size: 0.72rem; font-weight: 800; }
+.hasWorkout { border-color: color-mix(in srgb, var(--success) 60%, var(--border)); background: color-mix(in srgb, var(--success) 8%, var(--surface)); }
+.selected { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 16%, transparent); }
+.details { min-height: 110px; padding: 1.6rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; }
+.details > p { margin: 0; color: var(--text); }
+.details h2 { margin: 0 0 1.2rem; color: var(--title); font-size: 1.25rem; }
+.historyList { display: flex; flex-direction: column; gap: 0.8rem; }
+.historyCard { padding: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+.historyCard h3, .historyCard p { margin: 0; }
+.historyCard h3 { color: var(--title); }
+.historyCard p { margin-top: 0.3rem; color: var(--text); }
+.historyCard strong { color: var(--success); }
+.controls button:focus-visible, .day:focus-visible { outline: 3px solid color-mix(in srgb, var(--primary) 40%, transparent); outline-offset: 3px; }
+@media (max-width: 850px) { .header { flex-direction: column; align-items: flex-start; } .controls { width: 100%; justify-content: space-between; } .day { min-height: 64px; padding: 0.6rem; } }
+@media (max-width: 600px) { .page { gap: 1.25rem; } .header { padding: 1.25rem; border-radius: 14px; } .controls button span { display: none; } .controls strong { min-width: 130px; font-size: 0.9rem; } .calendar { padding: 0.75rem; } .weekDays, .days { gap: 0.35rem; } .day { min-height: 50px; padding: 0.45rem; border-radius: 8px; font-size: 0.8rem; } .day small { width: 18px; height: 18px; font-size: 0.65rem; } .details { padding: 1.2rem; } .historyCard { align-items: flex-start; flex-direction: column; } }

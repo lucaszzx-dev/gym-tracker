@@ -1,0 +1,151 @@
+.page {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.back {
+    width: fit-content;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back:hover {
+    color: var(--primary);
+    transform: translateX(-3px);
+}
+
+.header {
+    padding: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.header > span {
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin: 0.35rem 0 0;
+    color: var(--title);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.1;
+}
+
+.header p {
+    max-width: 620px;
+    margin: 0.65rem 0 0;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.form {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.formHeader h2,
+.formHeader p { margin: 0; }
+.formHeader h2 { color: var(--title); font-size: 1.3rem; }
+.formHeader p { margin-top: 0.25rem; color: var(--text); font-size: 0.9rem; }
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.formControl {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--title);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.formControl input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.8rem 0.9rem;
+    background: var(--input);
+    color: var(--title);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    font: inherit;
+    font-size: 0.92rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formControl input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+}
+
+.actions a,
+.actions button {
+    min-height: 42px;
+    padding: 0.7rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    color: var(--title);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.actions button {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.actions a:hover { background: var(--surface-2); border-color: var(--primary); }
+.actions button:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+
+.back:focus-visible,
+.actions a:focus-visible,
+.actions button:focus-visible,
+.formControl input:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--primary) 40%, transparent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .page { gap: 1.25rem; }
+    .header { padding: 1.25rem; border-radius: 14px; }
+    .form { padding: 1.2rem; border-radius: 14px; }
+    .formGrid { grid-template-columns: 1fr; }
+    .actions { flex-direction: column-reverse; }
+    .actions a, .actions button { width: 100%; }
+}

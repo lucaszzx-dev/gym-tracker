@@ -1,0 +1,144 @@
+.timer {
+    width: 100%;
+    margin-top: 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header > div {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.icon {
+    font-size: 1.35rem;
+}
+
+.header select {
+    background: var(--card);
+    color: var(--title);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .7rem .9rem;
+    outline: none;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.header select:hover {
+    border-color: var(--text-secondary);
+}
+
+.header select:focus {
+    border-color: var(--primary);
+}
+
+.header select:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.time {
+    display: block;
+    text-align: center;
+
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: .08rem;
+
+    color: var(--primary);
+
+    margin: 2rem 0 1.5rem;
+}
+
+.finished {
+    color: var(--success);
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        var(--success),
+        color-mix(in srgb, var(--success) 82%, #000)
+    );
+    border-radius: 999px;
+    transition: width .35s;
+}
+
+.resetButton {
+    margin-top: 1.2rem;
+
+    width: 100%;
+
+    padding: .9rem;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--text);
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.resetButton:hover:not(:disabled) {
+    background: var(--primary-soft);
+    border-color: var(--primary);
+    color: var(--title);
+}
+
+.resetButton:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header select {
+        width: 100%;
+    }
+
+    .time {
+        font-size: 2.4rem;
+    }
+
+}
+
+.header select option {
+    background: var(--card);
+    color: var(--title);
+}

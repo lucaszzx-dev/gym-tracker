@@ -1,0 +1,110 @@
+.page {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.header {
+    padding: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.header > span,
+.workoutInfo > span {
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin: 0.35rem 0 0;
+    color: var(--title);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.1;
+}
+
+.header p { margin: 0.6rem 0 0; color: var(--text); }
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.sectionHeader h2 { margin: 0; color: var(--title); font-size: 1.6rem; }
+.sectionHeader strong {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 0.6rem;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.list { display: flex; flex-direction: column; gap: 1rem; }
+
+.card {
+    padding: 1.4rem;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.workoutInfo { min-width: 0; }
+.workoutInfo h2 { margin: 0.25rem 0 0; color: var(--title); font-size: 1.25rem; overflow-wrap: anywhere; }
+.metric { padding-left: 1.25rem; border-left: 1px solid var(--border); }
+.metric strong { display: block; color: var(--title); font-size: 1.05rem; }
+.metric p { margin: 0.25rem 0 0; color: var(--text); font-size: 0.85rem; }
+
+.empty {
+    min-height: 250px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    background: var(--card);
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    text-align: center;
+}
+.empty > span {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--primary) 14%, transparent);
+    color: var(--primary);
+    border-radius: 13px;
+    font-size: 1.4rem;
+}
+.empty h2, .empty p { margin: 0; }
+.empty h2 { color: var(--title); }
+.empty p { color: var(--text); }
+
+@media (max-width: 700px) {
+    .page { gap: 1.25rem; }
+    .header { padding: 1.25rem; border-radius: 14px; }
+    .card { grid-template-columns: 1fr 1fr; padding: 1.2rem; }
+    .workoutInfo { grid-column: 1 / -1; }
+    .metric { padding: 0; border-left: 0; }
+    .card:hover { transform: none; }
+}

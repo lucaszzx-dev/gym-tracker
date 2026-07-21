@@ -1,0 +1,84 @@
+.page {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.header {
+    padding: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+.header > span { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.header h1 { margin: 0.35rem 0 0; color: var(--title); font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; }
+.header p { margin: 0.6rem 0 0; color: var(--text); }
+
+.card {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.identity { display: flex; align-items: center; gap: 1rem; }
+.avatar, .avatarFallback {
+    width: 82px;
+    height: 82px;
+    flex-shrink: 0;
+    border: 3px solid color-mix(in srgb, var(--primary) 28%, var(--border));
+    border-radius: 50%;
+    object-fit: cover;
+}
+.avatarFallback { display: grid; place-items: center; background: var(--surface-2); color: var(--primary); font-size: 2rem; font-weight: 800; }
+.identity h2, .identity p { margin: 0; }
+.identity h2 { color: var(--title); font-size: 1.5rem; overflow-wrap: anywhere; }
+.identity p { margin-top: 0.35rem; color: var(--text); overflow-wrap: anywhere; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.stats div { padding: 1.2rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; }
+.stats strong { display: block; color: var(--title); font-size: 1.7rem; }
+.stats span { display: block; margin-top: 0.3rem; color: var(--text); font-size: 0.85rem; }
+
+.accountActions {
+    padding-top: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+}
+.accountActions h3, .accountActions p { margin: 0; }
+.accountActions h3 { color: var(--title); font-size: 1rem; }
+.accountActions p { margin-top: 0.3rem; color: var(--text); font-size: 0.88rem; }
+.logout {
+    min-height: 42px;
+    padding: 0.7rem 1rem;
+    flex-shrink: 0;
+    background: var(--surface);
+    color: var(--danger);
+    border: 1px solid color-mix(in srgb, var(--danger) 35%, transparent);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.logout:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+.logout:focus-visible { outline: 3px solid color-mix(in srgb, var(--primary) 40%, transparent); outline-offset: 3px; }
+
+@media (max-width: 750px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) {
+    .page { gap: 1.25rem; }
+    .header, .card { padding: 1.25rem; border-radius: 14px; }
+    .identity { align-items: flex-start; }
+    .avatar, .avatarFallback { width: 66px; height: 66px; }
+    .accountActions { align-items: stretch; flex-direction: column; }
+    .logout { width: 100%; }
+}

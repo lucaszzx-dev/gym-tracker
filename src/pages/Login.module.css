@@ -1,0 +1,43 @@
+.page {
+    min-height: 100vh;
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 20%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 34%),
+        var(--background);
+}
+.card {
+    width: 100%;
+    max-width: 460px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    text-align: center;
+}
+.brandMark { width: 58px; height: 58px; margin-bottom: 1.4rem; display: grid; place-items: center; background: var(--primary); color: #fff; border-radius: 16px; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.04em; }
+.eyebrow { color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.card h1 { margin: 0.45rem 0 0; color: var(--title); font-size: clamp(2.2rem, 8vw, 2.8rem); line-height: 1.1; }
+.card p { margin: 1rem 0 0; color: var(--text); line-height: 1.65; }
+.loginButton {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 1.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.loginButton:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.loginButton:focus-visible { outline: 3px solid color-mix(in srgb, var(--primary) 40%, transparent); outline-offset: 3px; }
+.card small { margin-top: 1rem; color: var(--text-secondary); font-size: 0.78rem; }
+@media (max-width: 500px) { .page { padding: 1rem; } .card { padding: 2rem 1.25rem; border-radius: 14px; } }
