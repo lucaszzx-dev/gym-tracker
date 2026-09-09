@@ -33,3 +33,5 @@ Comandos de qualidade disponíveis: `npm run lint`, `npm test` e `npm run build`
 ## Status
 
 MVP concluído.
+
+- 🌐 Portfólio: [https://lucasdfranca.dev](https://lucasdfranca.dev)
